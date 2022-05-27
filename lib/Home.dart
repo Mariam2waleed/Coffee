@@ -15,19 +15,26 @@ class _HomeState extends State<Home> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('List of entries'),
+        backgroundColor: Colors.transparent,
+        leading: IconButton(onPressed:(){}, icon: Icon(Icons.filter_list)),
         actions: [
-          IconButton(
-              onPressed: () {
-                pushSaved();
-              },
-              icon: Icon(Icons.list)),
+          IconButton(onPressed:(){pushSaved();}, icon: Icon(Icons.search)),
         ],
       ),
       //2.build list & Add item to list
       body: ListView.builder(
         itemCount: entries.length,
         itemBuilder: (context, index) => builtFavouriteItem(entries[index]),
+      ),
+      bottomNavigationBar: BottomNavigationBar(
+
+        items: [
+          BottomNavigationBarItem(icon: Icon(Icons.home), label: ''),
+          BottomNavigationBarItem(icon: Icon(Icons.location_on_outlined), label: ''),
+         // BottomNavigationBarItem(icon: Icon(Icons.coffee), label: ''),
+          BottomNavigationBarItem(icon: Icon(Icons.person_pin_outlined), label: ''),
+          BottomNavigationBarItem(icon: Icon(Icons.coffee_maker), label: ''),
+        ],
       ),
     );
   }
