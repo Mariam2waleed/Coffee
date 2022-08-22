@@ -1,26 +1,20 @@
 import 'package:flutter/material.dart';
-import 'Home.dart';
-
-void main()
-{
+import 'package:coffee/product.dart';
+import 'package:coffee/screens/home_screen/home_screen.dart';
+void main() {
   runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
-  // 1- constructor 2- init state 3- build
+  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      //debugShowCheckedModeBanner: false,
-      home: Home(),
+      debugShowCheckedModeBanner: false,
+      theme: ThemeData(
+        visualDensity: VisualDensity.adaptivePlatformDensity,
+      ),
+      home: HomeScreen(),
     );
   }
 }
-
-
-
-
-
-
-
-
