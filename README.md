@@ -1,6 +1,7 @@
 # coffee
 
-Coffee.
+Coffee 
+Mobile application
 
 ## Getting Started
 
